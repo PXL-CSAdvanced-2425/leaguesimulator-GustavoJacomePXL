@@ -8,6 +8,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using LeagueClassLibrary.DataAccess;
+using LeagueClassLibrary.Entities;
 
 namespace LeagueSimulator;
 
@@ -19,11 +21,12 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
+        ComboBoxPositions.ItemsSource = new[] { "sup", "mid", "bot", "jung", "top" };
     }
 
     private void LaadChampionDataButton_Click(object sender, RoutedEventArgs e)
     {
-
+        ChampionData.LoadCSV()
     }
 
     private void LaadAbilityDataButton_Click(object sender, RoutedEventArgs e)
